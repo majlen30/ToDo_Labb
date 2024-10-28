@@ -1,18 +1,17 @@
-// import "./App.css";
-import "./index.css";
+import { useState } from "react";
 import { CreateTask } from "./components/CreateTask";
 import { TaskList } from "./components/TaskList";
+import "./index.css";
 
 function App() {
+  const [updateTask, setUpdateTask] = useState(false);
+
   return (
     <>
-      <CreateTask />
+      <CreateTask onCreateTask={() => setUpdateTask((prev) => !prev)} />
       <div className="flex justify-around my-10">
         <div className="flex-initial w-[40%]">
-          <TaskList />
-        </div>
-        <div className="flex-initial w-[40%]">
-          <TaskList />
+          <TaskList updateTaskList={updateTask} />
         </div>
       </div>
     </>

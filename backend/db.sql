@@ -16,12 +16,6 @@ INSERT INTO categories (category_name) VALUES
 ('Fritid'),
 ('Skola');
 
-INSERT INTO tasks (task_name, task_category) VALUES
-('Boka möte', 1),
-('Prov', 3);
-
 INSERT INTO tasks (task_name, task_category, task_completed) VALUES
 ('Äta på restaurang', 2, false),
 ('Workshop', 1, true);
-
-SELECT task_name, category_name, task_completed FROM tasks INNER JOIN categories task_category = category_id;
